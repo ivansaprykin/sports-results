@@ -1,0 +1,65 @@
+<!--<div layout="column" flex class="content-wrapper" id="primary-col">-->
+
+    <!--<md-content layout="column" flex class="md-padding">-->
+
+        <h2>Схема базы данных - Футбольные клубы</h2>
+
+        <div ng-repeat="table in databaseTables">
+            <div class="item">
+
+                <div class="itemhead">
+                    <h2>{{table.tableName}}</h2>
+                </div>
+
+                <div ng-repeat="column in table.columns">
+                    <p>{{column}}</p>
+                </div>
+
+            </div>
+        </div>
+
+    <!--</md-content>-->
+<!--</div>-->
+<!--
+
+<md-content flex md-scroll-y>
+    <ui-view layout="column" layout-fill layout-padding>
+
+        <div class="inset" hide-sm></div>
+        <ng-switch on="data.selectedIndex" class="tabpanel-container">
+            <div role="tabpanel"
+                 id="tab1-content"
+                 aria-labelledby="tab1"
+                 ng-switch-when="0"
+                 md-swipe-left="next()"
+                 md-swipe-right="previous()"
+                 layout="row" layout-align="center center">
+                <md-card flex-gt-sm="90" flex-gt-md="80">
+                    <md-card-content>
+
+                        <h2>Таблицы в базе данных:</h2>
+                        <md-list>
+                            <md-item ng-repeat="table in databaseTables">
+                                <md-item-content>
+                                    <div class="md-tile-content">
+
+                                        <h3>{{table.tableName}}</h3>
+                                        <div ng-repeat="column in table.columns" style=" background-color: white">
+                                            <h4>{{column}}</h4>
+                                        </div>
+
+
+                                    </div>
+                                </md-item-content>
+                                <md-divider md-inset hide-sm ng-if="!$last"></md-divider>
+                                <md-divider hide-gt-sm ng-if="!$last"></md-divider>
+                            </md-item>
+                        </md-list>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+        </ng-switch>
+
+    </ui-view>
+</md-content>-->

@@ -1,0 +1,45 @@
+<md-content laout="column" flex>
+    <md-card>
+
+        <md-toolbar class="md-table-toolbar md-default" ng-hide="selected.length">
+            <div class="md-toolbar-tools">
+                <span>Таблица Результат соревнований</span>
+                <div flex></div>
+            </div>
+        </md-toolbar>
+
+        <md-toolbar class="md-table-toolbar alternate" ng-show="selected.length">
+            <div class="md-toolbar-tools">
+                <span>Выбрано {{selected.length}}</span>
+            </div>
+        </md-toolbar>
+
+        <md-table-container>
+            <table md-table multiple="true" md-row-select="true" ng-model="selected">
+                <thead md-head md-order="orderQuery.order">
+                <tr md-row>
+                    <th md-column md-order-by="competitionNumber"><span>Номер соревнования</span></th>
+                    <th md-column md-order-by="teamName"><span>Название команды</span></th>
+                    <th md-column md-order-by="teamPosition"><span>Место</span></th>
+                    <th md-column md-order-by="scoredGoals"><span>Забитых мячей</span></th>
+                    <th md-column md-order-by="missedGoals"><span>Пропущенных мячей</span></th>
+                </tr>
+                </thead>
+
+                <tbody md-body>
+                <tr md-row
+                    md-select="competitionResult"
+                    md-auto-select="true"
+                    ng-repeat="competitionResult in competitionResults | orderBy: orderQuery.order ">
+                    <td md-cell>{{competitionResult.competitionNumber}}</td>
+                    <td md-cell>{{competitionResult.teamName}}</td>
+                    <td md-cell>{{competitionResult.teamPosition}}</td>
+                    <td md-cell>{{competitionResult.scoredGoals}}</td>
+                    <td md-cell>{{competitionResult.missedGoals}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+
+    </md-card>
+</md-content>

@@ -1,0 +1,302 @@
+body > md-toolbar {
+  z-index: 3;
+}
+
+md-toolbar.md-table-toolbar.alternate {
+  color: #1e88e5;
+  background-color: #e3f2fd;
+}
+
+md-toolbar.md-table-toolbar.alternate .md-toolbar-tools {
+  font-size: 16px;
+}
+
+md-card:first-child {
+  padding: 8px 8px 8px 24px;
+}
+
+
+.item {
+  background: #E5E5E5;
+  width: 440px;
+  padding-bottom: 30px;
+  margin: 0 auto 2em;
+}
+
+.itemhead {
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.itemhead h2 {
+  font-weight: 400;
+  float: left;
+  margin-left: 20px;
+}
+
+.item p:first-of-type {
+  margin-top: 0
+}
+
+.item p {
+  padding: 0px 30px;
+  font-size: 19px;
+  line-height: 26px;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.md-button.md-icon-button.menuBtn {
+  margin-top: 6px;
+  margin-right: 0;
+}
+
+.muppet-list .md-button {
+  color: inherit;
+  text-align: left;
+  width: 90%;
+}
+
+.muppet-list .selected {
+  color: #03a9f4;
+}
+
+.content-wrapper {
+  position: relative;
+}
+
+#primary-col {
+  overflow: hidden;
+}
+
+#primary-col .md-button {
+  margin: 8px auto 16px 0;
+}
+
+#primary-col .cell {
+  flex: 1 1 auto;
+}
+
+/*body {
+    background-color: #eee;
+}
+
+.ng-scope {
+    background-color: #eee;
+}
+
+.ng-scope.h4 {
+    background-color: white;
+}
+
+md-content.md-default-theme {
+    background-color: #eee;
+}
+
+md-card {
+    background-color: #fff;
+}
+md-card h2:first-of-type {
+    margin-top: 0;
+}
+
+md-toolbar .md-button.md-default-theme {
+    border-radius: 99%;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+.md-toolbar-tools-bottom {
+    font-size: small;
+}
+.md-toolbar-tools-bottom :last-child {
+    opacity: 0.8;
+}
+
+md-toolbar:not(.md-hue-1),
+.md-fab {
+    fill: #fff;
+}
+
+md-sidenav {
+    fill: #737373;
+}
+md-sidenav ng-md-icon {
+    position: relative;
+    top: 5px;
+}
+
+.user-avatar {
+    border-radius: 99%;
+}*/
+
+
+
+/*
+!* Space out content a bit *!
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+!* Everything but the jumbotron gets side spacing for mobile first views *!
+.header,
+.marketing,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+!* Custom page header *!
+.header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+!* Make the masthead heading the same height as the navigation *!
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+
+
+
+!* Custom page footer *!
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footerholder {
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+}
+
+.footer {
+    text-align: center;
+    height: 100px;
+    margin: auto;
+    width: 400px;
+}
+
+
+!* Customize container *!
+@media (min-width: 768px) {
+    .container {
+        max-width: 830px;
+    }
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+!* Main marketing message and sign up button *!
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
+
+!* Supporting marketing content *!
+.marketing {
+    margin: 40px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+!* Responsive: Portrait tablets and up *!
+@media screen and (min-width: 768px) {
+    !* Remove the padding we set earlier *!
+    .header,
+    .marketing,
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    !* Space out the masthead *!
+    .header {
+        margin-bottom: 30px;
+    }
+    !* Remove the bottom border on the jumbotron for visual effect *!
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.post-preview > a:hover,
+.post-preview > a:focus {
+    text-decoration: none;
+    color: #0085a1;
+}
+.post-preview > a > .post-title {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.post-preview > a > .post-subtitle {
+    margin: 0;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.post-preview > .post-meta {
+    color: #808080;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+}
+.post-preview > .post-meta > a {
+    text-decoration: none;
+    color: #404040;
+}
+.post-preview > .post-meta > a:hover,
+.post-preview > .post-meta > a:focus {
+    color: #0085a1;
+    text-decoration: underline;
+}
+@media only screen and (min-width: 768px) {
+    .post-preview > a > .post-title {
+        font-size: 36px;
+    }
+}
+
+.post-preview > a > .post-subtitle {
+    margin: 0;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.post-preview > .post-meta {
+    color: #808080;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+}
+.post-preview > .post-meta > a {
+    text-decoration: none;
+    color: #404040;
+}
+.post-preview > .post-meta > a:hover,
+.post-preview > .post-meta > a:focus {
+    color: #0085a1;
+    text-decoration: underline;
+}*/

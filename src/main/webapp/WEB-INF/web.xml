@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app version="3.0"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         metadata-complete="false">
+
+
+
+    <servlet>
+        <servlet-name>CreateDatabaseServlet</servlet-name>
+        <servlet-class>com.saprykin.dblabs.controller.CreateDatabaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateDatabaseServlet</servlet-name>
+        <url-pattern>/createDatabase</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetDatabaseSchemaController</servlet-name>
+        <servlet-class>com.saprykin.dblabs.controller.GetDatabaseSchemaController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetDatabaseSchemaController</servlet-name>
+        <url-pattern>/getDatabaseSchema</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAllTeamsServlet</servlet-name>
+        <servlet-class>com.saprykin.dblabs.controller.team.GetAllTeamsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllTeamsServlet</servlet-name>
+        <url-pattern>/getAllTeams</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>GetAllCompetitionServlet</servlet-name>
+        <servlet-class>com.saprykin.dblabs.controller.competition.GetAllCompetitionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllCompetitionServlet</servlet-name>
+        <url-pattern>/getAllCompetitions</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>GetAllCompetitionResultServlet</servlet-name>
+        <servlet-class>com.saprykin.dblabs.controller.competition_result.GetAllCompetitionResultServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllCompetitionResultServlet</servlet-name>
+        <url-pattern>/getAllCompetitionResults</url-pattern>
+    </servlet-mapping>
+
+
+
+</web-app>
+
