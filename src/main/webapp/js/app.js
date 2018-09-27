@@ -33,7 +33,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 var controllers = {};
 
-
 controllers.competitionTableController = function ($scope, $http) {
 
     $scope.selected = [];
@@ -108,7 +107,7 @@ controllers.AppCtrl = function($scope, $mdSidenav) {
     $scope.toggleSidenav = toggleSidenav;
     function toggleSidenav(name) {
         $mdSidenav(name).toggle();
-    };
+    }
 
 };
 
