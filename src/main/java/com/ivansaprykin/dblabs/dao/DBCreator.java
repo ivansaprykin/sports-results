@@ -1,48 +1,26 @@
-package com.saprykin.dblabs.controller;
+package com.ivansaprykin.dblabs.dao;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
 import java.util.Date;
-import java.util.logging.StreamHandler;
 
+public class DBCreator {
 
-public class CreateDatabaseServlet extends HttpServlet {
+    public DBCredentials credentials;
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
-
-        response.setContentType("application/json");
-        ObjectMapper mapper = new ObjectMapper();
+    public void createDB() {
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch(ClassNotFoundException e) {
-            mapper.writeValue(response.getOutputStream(), e.getMessage());
-
         }
 
-        String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
-        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
-        String dbUrl = "jdbc:mysql://" + host + ":" + port + "/dblabs" + "?useUnicode=true&characterEncoding=utf-8";
-
-        //  Database credentials
-        String username = "admind6SUcGH";
-        String password = "GS476LZ2W1Ni";
+        credentials = new DBCredentials();
 
         try(
-                Connection connection = DriverManager.getConnection(dbUrl, username, password);
+                Connection connection = DriverManager.getConnection(credentials.getDbUrl(), credentials.getUsername(), credentials.getPassword());
                 Statement stmt = connection.createStatement();
         ) {
             String dropAllTablesIfExist = "DROP TABLE IF EXISTS sportsman_result, competition_result, sportsman, team, competition";
@@ -141,7 +119,6 @@ public class CreateDatabaseServlet extends HttpServlet {
                 sqlDate = new java.sql.Date(myDate.getTime());
 
             } catch (ParseException e) {
-                mapper.writeValue(response.getOutputStream(), e.getMessage());
             }
             preparedStatement.setInt(1, 1);
             preparedStatement.setString(2, "Карибский клубный чемпионат");
@@ -157,7 +134,7 @@ public class CreateDatabaseServlet extends HttpServlet {
                 sqlDate = new java.sql.Date(myDate.getTime());
 
             } catch (ParseException e) {
-                mapper.writeValue(response.getOutputStream(), e.getMessage());
+
             }
             preparedStatement.setInt(1, 2);
             preparedStatement.setString(2, "Match World Cup 2016");
@@ -198,8 +175,7 @@ public class CreateDatabaseServlet extends HttpServlet {
 
 
         } catch(SQLException e) {
-            mapper.writeValue(response.getOutputStream(), e.getMessage());
-        }
 
+        }
     }
 }

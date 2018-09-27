@@ -1,7 +1,8 @@
-package com.saprykin.dblabs.controller;
+package com.ivansaprykin.dblabs.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.saprykin.dblabs.model.DatabaseTable;
+import com.ivansaprykin.dblabs.dao.DBCredentials;
+import com.ivansaprykin.dblabs.model.DatabaseTable;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,7 @@ public class GetDatabaseSchemaController extends HttpServlet {
 
         response.setContentType("application/json");
         ObjectMapper mapper = new ObjectMapper();
-
+        DBCredentials credentials = new DBCredentials();
 
 
         try {
@@ -28,20 +29,12 @@ public class GetDatabaseSchemaController extends HttpServlet {
             mapper.writeValue(response.getOutputStream(), e.getMessage());
             }
 
-        String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
-        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
-        String dbUrl = "jdbc:mysql://" + host + ":" + port + "/dblabs";
-
-        //  Database credentials
-        String username = "admind6SUcGH";
-        String password = "GS476LZ2W1Ni";
-
         try(
-                Connection conn = DriverManager.getConnection(dbUrl, username, password);
-                Statement stmt = conn.createStatement();
+                Connection connection = DriverManager.getConnection(credentials.getDbUrl(), credentials.getUsername(), credentials.getPassword());
+                Statement stmt = connection.createStatement();
         ) {
 
-            DatabaseMetaData metadata = conn.getMetaData();
+            DatabaseMetaData metadata = connection.getMetaData();
             DatabaseTable[] result = getColumnsMetadata(getTablesMetadata(metadata), metadata);
 
             mapper.writeValue(response.getOutputStream(), result);

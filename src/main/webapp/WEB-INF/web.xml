@@ -10,7 +10,7 @@
 
     <servlet>
         <servlet-name>CreateDatabaseServlet</servlet-name>
-        <servlet-class>com.saprykin.dblabs.controller.CreateDatabaseServlet</servlet-class>
+        <servlet-class>com.ivansaprykin.dblabs.controller.CreateDatabaseServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateDatabaseServlet</servlet-name>
@@ -19,7 +19,7 @@
 
     <servlet>
         <servlet-name>GetDatabaseSchemaController</servlet-name>
-        <servlet-class>com.saprykin.dblabs.controller.GetDatabaseSchemaController</servlet-class>
+        <servlet-class>com.ivansaprykin.dblabs.controller.GetDatabaseSchemaController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GetDatabaseSchemaController</servlet-name>
@@ -28,7 +28,7 @@
 
     <servlet>
         <servlet-name>GetAllTeamsServlet</servlet-name>
-        <servlet-class>com.saprykin.dblabs.controller.team.GetAllTeamsServlet</servlet-class>
+        <servlet-class>com.ivansaprykin.dblabs.controller.team.GetAllTeamsServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GetAllTeamsServlet</servlet-name>
@@ -38,7 +38,7 @@
 
     <servlet>
         <servlet-name>GetAllCompetitionServlet</servlet-name>
-        <servlet-class>com.saprykin.dblabs.controller.competition.GetAllCompetitionServlet</servlet-class>
+        <servlet-class>com.ivansaprykin.dblabs.controller.competition.GetAllCompetitionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GetAllCompetitionServlet</servlet-name>
@@ -48,7 +48,7 @@
 
     <servlet>
         <servlet-name>GetAllCompetitionResultServlet</servlet-name>
-        <servlet-class>com.saprykin.dblabs.controller.competition_result.GetAllCompetitionResultServlet</servlet-class>
+        <servlet-class>com.ivansaprykin.dblabs.controller.competition_result.GetAllCompetitionResultServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GetAllCompetitionResultServlet</servlet-name>

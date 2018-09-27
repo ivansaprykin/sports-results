@@ -1,7 +1,8 @@
-package com.saprykin.dblabs.controller.team;
+package com.ivansaprykin.dblabs.controller.team;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.saprykin.dblabs.model.Team;
+import com.ivansaprykin.dblabs.dao.DBCredentials;
+import com.ivansaprykin.dblabs.model.Team;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,7 @@ public class GetAllTeamsServlet extends HttpServlet {
 
         response.setContentType("application/json");
         ObjectMapper mapper = new ObjectMapper();
-
+        DBCredentials credentials = new DBCredentials();
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -28,16 +29,10 @@ public class GetAllTeamsServlet extends HttpServlet {
             mapper.writeValue(response.getOutputStream(), e.getMessage());
         }
 
-        String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
-        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
-        String dbUrl = "jdbc:mysql://" + host + ":" + port + "/dblabs";
-        String username = "admind6SUcGH";
-        String password = "GS476LZ2W1Ni";
-
         List<Team> teams = new ArrayList<>();
         try(
-                Connection conn = DriverManager.getConnection(dbUrl, username, password);
-                Statement stmt = conn.createStatement();
+                Connection connection = DriverManager.getConnection(credentials.getDbUrl(), credentials.getUsername(), credentials.getPassword());
+                Statement stmt = connection.createStatement();
         ) {
 
 

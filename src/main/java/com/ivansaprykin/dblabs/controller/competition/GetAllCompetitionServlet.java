@@ -1,8 +1,8 @@
-package com.saprykin.dblabs.controller.competition;
+package com.ivansaprykin.dblabs.controller.competition;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.saprykin.dblabs.model.Competition;
-import com.saprykin.dblabs.model.Team;
+import com.ivansaprykin.dblabs.dao.DBCredentials;
+import com.ivansaprykin.dblabs.model.Competition;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +13,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class GetAllCompetitionServlet extends HttpServlet {
 
     @Override
@@ -21,7 +20,7 @@ public class GetAllCompetitionServlet extends HttpServlet {
 
         response.setContentType("application/json");
         ObjectMapper mapper = new ObjectMapper();
-
+        DBCredentials credentials = new DBCredentials();
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -29,18 +28,13 @@ public class GetAllCompetitionServlet extends HttpServlet {
             mapper.writeValue(response.getOutputStream(), e.getMessage());
         }
 
-        String host = System.getenv("OPENSHIFT_MYSQL_DB_HOST");
-        String port = System.getenv("OPENSHIFT_MYSQL_DB_PORT");
-        String dbUrl = "jdbc:mysql://" + host + ":" + port + "/dblabs";
-        String username = "admind6SUcGH";
-        String password = "GS476LZ2W1Ni";
+
 
         List<Competition> competitions = new ArrayList<>();
         try(
-                Connection conn = DriverManager.getConnection(dbUrl, username, password);
-                Statement stmt = conn.createStatement();
+                Connection connection = DriverManager.getConnection(credentials.getDbUrl(), credentials.getUsername(), credentials.getPassword());
+                Statement stmt = connection.createStatement();
         ) {
-
 
             String selectAllTeamsSqlQuery = "SELECT * FROM competition";
             ResultSet rs = stmt.executeQuery(selectAllTeamsSqlQuery);
@@ -53,11 +47,9 @@ public class GetAllCompetitionServlet extends HttpServlet {
                 competitions.add(competition);
             }
 
-
         } catch(SQLException e) {
             mapper.writeValue(response.getOutputStream(), e.getMessage());
         }
-
 
         mapper.writeValue(response.getOutputStream(), competitions);
     }

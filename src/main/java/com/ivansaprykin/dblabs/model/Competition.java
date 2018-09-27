@@ -1,4 +1,4 @@
-package com.saprykin.dblabs.model;
+package com.ivansaprykin.dblabs.model;
 
 import java.util.Date;
 
