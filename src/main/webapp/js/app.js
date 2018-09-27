@@ -1,4 +1,4 @@
-var app = angular.module('dblabs', ['ngMaterial', 'ui.router', 'md.data.table']);
+var app = angular.module('dblabs'); //, ['ngMaterial', 'ui.router', 'md.data.table']
 /*
 app.config(function($stateProvider, $urlRouterProvider) {
       //
