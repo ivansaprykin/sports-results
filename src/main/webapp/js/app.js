@@ -1,6 +1,3 @@
-
-
-
 var app = angular.module('dblabs', ['ngMaterial', 'ui.router', 'md.data.table']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
@@ -33,39 +30,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
           })
         ;
     });
-
-/*app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-
-
-
-    $urlRouterProvider.otherwise("/dashboard");
-
-
-    $stateProvider
-        .state('dashboard', {
-            url: "/dashboard",
-            templateUrl: "views/dashboard.html",
-            controller: ['$scope', '$state',
-                function ($scope, $state) {
-                    $state.go('dashboard.databaseSchema');
-                }]
-        })
-        .state('dashboard.databaseSchema', {
-            url: "/schema",
-            templateUrl: "views/databaseSchema.html",
-            controller: 'databaseSchemaController'
-        })
-        .state('dashboard.teamTable', {
-            url: "/teamTable",
-            templateUrl: "views/teamTable.html"
-        })
-        .state('dashboard.sportsmanTable', {
-            url: "/sportsmanTable",
-            templateUrl: "views/sportsmanTable.html"
-        })
-
-    ;
-}]);*/
 
 var controllers = {};
 
@@ -153,6 +117,38 @@ app.controller(controllers);
 
 
 
+/*app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+
+
+
+    $urlRouterProvider.otherwise("/dashboard");
+
+
+    $stateProvider
+        .state('dashboard', {
+            url: "/dashboard",
+            templateUrl: "views/dashboard.html",
+            controller: ['$scope', '$state',
+                function ($scope, $state) {
+                    $state.go('dashboard.databaseSchema');
+                }]
+        })
+        .state('dashboard.databaseSchema', {
+            url: "/schema",
+            templateUrl: "views/databaseSchema.html",
+            controller: 'databaseSchemaController'
+        })
+        .state('dashboard.teamTable', {
+            url: "/teamTable",
+            templateUrl: "views/teamTable.html"
+        })
+        .state('dashboard.sportsmanTable', {
+            url: "/sportsmanTable",
+            templateUrl: "views/sportsmanTable.html"
+        })
+
+    ;
+}]);*/
 /*
 
 
