@@ -1,9 +1,9 @@
 var app = angular.module('dblabs', ['ngMaterial', 'ui.router', 'md.data.table']);
-
+/*
 app.config(function($stateProvider, $urlRouterProvider) {
       //
       // For any unmatched url, redirect to /state1
-/*
+
        $urlRouterProvider.otherwise("/databaseSchema");
 
       //
@@ -29,10 +29,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
               templateUrl: "views/competitionResultTable.html",
               controller: 'competitionResultController'
           })
-        ;*/
+        ;
     });
-
+*/
 var controllers = {};
+app.vi = "df";
 
 /*
 controllers.competitionTableController = function ($scope, $http) {
@@ -104,6 +105,7 @@ controllers.teamTableController = function ($scope, $http) {
 };
 
 */
+/*
 
 controllers.AppCtrl = function($scope, $mdSidenav) {
 
@@ -115,6 +117,7 @@ controllers.AppCtrl = function($scope, $mdSidenav) {
 };
 
 app.controller(controllers);
+*/
 
 
 
