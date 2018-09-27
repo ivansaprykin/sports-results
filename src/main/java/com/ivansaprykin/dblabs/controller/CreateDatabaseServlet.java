@@ -24,10 +24,11 @@ public class CreateDatabaseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
 
-        response.setContentType("application/json");
+        response.setContentType("text/plain");
         ObjectMapper mapper = new ObjectMapper();
         DBCreator creator = new DBCreator();
         creator.createDB();
 
+        mapper.writeValue(response.getOutputStream(), "Database created!");;
     }
 }

@@ -126,7 +126,7 @@ public class DBCreator {
             preparedStatement.execute();
 
 
-            date = "2018-02-22";
+            date = "2018-02-18";
             sqlDate = null;
             try {
                 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -137,7 +137,7 @@ public class DBCreator {
 
             }
             preparedStatement.setInt(1, 2);
-            preparedStatement.setString(2, "Match World Cup 2016");
+            preparedStatement.setString(2, "Match World Cup 2020");
             preparedStatement.setDate(3, sqlDate);
             preparedStatement.execute();
 
@@ -171,8 +171,6 @@ public class DBCreator {
             preparedStatement.setInt(4, 4);
             preparedStatement.setInt(5, 5);
             preparedStatement.execute();
-
-
 
         } catch(SQLException e) {
 
