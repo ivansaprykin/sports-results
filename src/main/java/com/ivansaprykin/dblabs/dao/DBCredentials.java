@@ -18,9 +18,11 @@ public class DBCredentials {
             e.printStackTrace();
         }
 
-        String username = dbUri.getUserInfo().split(":")[0];
-        String password = dbUri.getUserInfo().split(":")[1];
-        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath() + "?characterEncoding=UTF-8";
+        username = dbUri.getUserInfo().split(":")[0];
+        password = dbUri.getUserInfo().split(":")[1];
+        dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath() + "?characterEncoding=UTF-8";
+
+
     }
 
     public String getDbUrl() {
