@@ -111,7 +111,7 @@ public class DBCreator {
             preparedStatement = connection.prepareStatement(insertIntoCompetitionTableSqlQuery);
 
 
-            String date = "2015-07-18";
+            String date = "2018-01-18";
             java.sql.Date sqlDate = null;
             try {
                 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -126,7 +126,7 @@ public class DBCreator {
             preparedStatement.execute();
 
 
-            date = "2016-03-22";
+            date = "2018-02-22";
             sqlDate = null;
             try {
                 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
